@@ -146,12 +146,12 @@
             position: absolute;
             top: 0;
             right: 0;
+            border-radius: .7rem;
         }
 
         .search-button:hover {
             outline: 1px solid var(--color-primary);
             background: rgba(0, 0, 0, .05);
-
         }
 
         .search-form:focus-within {
@@ -161,6 +161,16 @@
 
         .search-form:focus-within .search-button {
             color: var(--color-primary);
+        }
+
+        .main-content {
+            padding-top: 0;
+        }
+
+        .main-content-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--spacing-gutter-large);
         }
     </style>
 </head>
