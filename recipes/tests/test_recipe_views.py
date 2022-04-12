@@ -132,7 +132,7 @@ class RecipeViewsTest(RecipeTestBase):
             reverse(
                 'recipes:recipe',
                 kwargs={
-                    'id': recipe.category.id
+                    'id': recipe.id
                 }))
 
         self.assertEqual(response.status_code, 404)
