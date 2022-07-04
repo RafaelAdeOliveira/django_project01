@@ -357,8 +357,20 @@ h6 {
     border-radius: .6rem;
 }
 
-/* MESSAGES */
+.inline-form {
+    display: inline;
+}
 
+.plaintext-button {
+    display: inline;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: 1.6rem;
+}
+
+/* MESSAGES */
 .messages-container {
     display: flex;
     flex-flow: column nowrap;
