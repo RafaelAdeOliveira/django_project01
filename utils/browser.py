@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
+from time import sleep
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -15,12 +17,17 @@ def make_chrome_browser(*options):
         for option in options:
             chrome_options.add_argument(option)
 
+    if os.environ.get('SELENIUM_HEADLESS') == '1':
+        chrome_options.add_argument('--headless')
+
     chrome_service = Service(executable_path=CHROMEDRIVER_PATH)
     browser = webdriver.Chrome(service=chrome_service, options=chrome_options)
     return browser
 
 
-# --headless -> faz as coisas por debaixo dos panos, não abre o navegador
+# --headless -> não abre o navegador
 if __name__ == '__main__':
     browser = make_chrome_browser('--headless')
-    browser.get('https://www.fundamentus.com.br/detalhes.php?papel=ENBR3')
+    browser.get('https://www.udemy.com/')
+    sleep(5)
+    browser.quit()
